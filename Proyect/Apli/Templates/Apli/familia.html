@@ -1,0 +1,24 @@
+
+{% extends 'Apli/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<div style="background-color: rgb(255, 0, 0);">
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>Este es el Formulario para entrar familiares</h1>
+    <p> Se hereda todos desde padre</p>
+    <h3>Podes Igrsar un familiar nuevo </h3>
+</div>
+<form method="post">
+        {% csrf_token %}
+
+    <table>
+
+        {{ form.as_table }}
+    </table>
+    
+    <input type="submit" value="Enviar">
+</form>
+
+{% endblock %}

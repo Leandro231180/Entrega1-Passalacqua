@@ -1,0 +1,42 @@
+{% extends 'Apli/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    
+
+<div style="background-color: rgb(0, 217, 255);">
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>Este es el título del Inicio que cambio</h1>
+    <p> Se hereda todos desde padre</p>
+    <h3>Podes buscar un Familiar: </h3>
+
+    <form action="/Apli/buscar/" method="GET">
+
+        <input type="text" name="nombre">
+
+        <input type="submit" value="Buscar">
+
+
+    </form>
+</div>
+<p> Estas Buscando:  <strong>BUSQUEDA {{nombre}}</strong></p>
+
+
+
+<p></p>
+{% if nombre_diccionario %}
+    {% for datos in nombre_diccionario %}
+    {{nombre}}
+    
+    <p>Estamos buscando nombre: {{datos.nombre}}</p>
+    <p>Estamos buscando apellido: {{datos.apellido}}</p>
+    <p>Estamos buscando apellido: {{datos.edad}}</p>
+    {% endfor %}
+
+
+
+
+{% endif %} 
+
+{% endblock %}
